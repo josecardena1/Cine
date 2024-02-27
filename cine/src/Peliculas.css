@@ -1,0 +1,170 @@
+/* Peliculas.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../public/img/fondo1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 10px;
+}
+
+.col-md-4 {
+  width: calc(25% - 20px); /* Cambiamos el ancho a 25% */
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.col-md-4 img {
+  width: 100%;
+  height: auto;
+}
+
+.col-md-4 h4 {
+  margin-top: 10px;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+}
+
+.viewtrailer {
+  min-height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.boton {
+  background-color: #0f1014;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.reproductor {
+  width: 100%;
+  height: 600px;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 16, 20, 0.8); /* Azul oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white; /* Azul marino */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  height: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 30px #FF4500, 0 0 40px #FF4500, 0 0 50px #FF4500, 0 0 60px #FF4500, 0 0 70px #FF4500; /* Efecto de neón naranja */
+}
+
+.popup-content img {
+  max-width: 200px; /* Ancho máximo deseado */
+  height: auto;
+  margin-right: 20px; /* Espacio derecho para separar la imagen del formulario */
+}
+
+.card-container {
+  width: 100%; /* El contenedor de las cartas ocupa todo el ancho disponible */
+  display: flex; /* Utilizamos flexbox para distribuir las cartas */
+  flex-wrap: wrap; /* Permitimos que las cartas se envuelvan si no caben en una sola fila */
+  justify-content: space-around; /* Distribuimos las cartas de manera uniforme a lo largo del contenedor */
+  margin-top: 20px; /* Espacio entre el título y las cartas */
+}
+
+.card {
+  width: 45%; /* Cada carta ocupa el 40% del ancho del contenedor */
+  max-width: 400px; /* Ancho máximo de cada carta */
+  margin-bottom: 20px; /* Espacio entre las cartas */
+  padding: 10px; /* Espaciado interno de las cartas */
+  border-radius: 10px;
+  background-color: #fff; /* Color de fondo de las cartas */
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Sombra naranja */
+}
+.title {
+  width: 100%;
+  height: 10%; /* El título ocupa el 10% de la altura del modal */
+  text-align: center;
+  margin-bottom: 20px; /* Espacio entre el título y las cartas */
+  color: #FF4500; /* Color del texto */
+  font-size: 24px; /* Tamaño de fuente del título */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.botones {
+  --glow-color: rgb(255, 69, 0); /* Cambiar el color naranja */
+  --glow-spread-color: white; /* Cambiar el color de la difusión a blanco */
+  --enhanced-glow-color: rgb(231, 206, 255); /* Mantener el mismo color */
+  --btn-color:  rgb(255, 69, 0);/* Mantener el mismo color */
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: white; /* Cambiar el color del texto a blanco */
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em white, /* Cambiar el color del box shadow a blanco */
+              0 0 4em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em white; /* Cambiar el color del box shadow a blanco */
+  text-shadow: 0 0 .5em white; /* Cambiar el color de la sombra del texto a blanco */
+  position: relative;
+  transition: all 0.3s;
+}
+
+.botones::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.botones:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 2em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+
+.botones:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+              0 0 2.5em 2em var(--glow-spread-color),
+              inset 0 0 .5em .25em var(--glow-color);
+}
